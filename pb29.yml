@@ -1,0 +1,9 @@
+---
+- name: deploying a war on the webserver
+  hosts: webservers
+  become: true
+  tasks:
+  - name: copying a war file
+    copy:
+      src: /var/lib/jenkins/workspace/project_2_2/target/lunch.war
+      dest: /opt/apache-tomcat-8.5.73/webapps
